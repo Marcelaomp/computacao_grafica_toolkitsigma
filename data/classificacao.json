@@ -1,0 +1,14 @@
+[
+  {
+    "texto": "Problema: Determinar se uma grafo conexo tem ciclo hamiltoniano",
+    "correcto": "N"
+  },
+  {
+    "texto": "Instância: Um grafo com 4 vértices e arestas ...",
+    "correcto": "I"
+  },
+  {
+    "texto": "Problema: ordenar uma lista de números (algoritmo de comparação)",
+    "correcto": "T"
+  }
+]
