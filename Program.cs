@@ -33,9 +33,9 @@
             Console.WriteLine("\n===================== AV2 =====================");
             Console.WriteLine("6 - Classificar problema × instância por JSON");
             Console.WriteLine("7 - Decidir Σ={a,b}: L_fim_b e L_mult3_b");
-            Console.WriteLine("8 - Verficar se termina com 'b'");
-            Console.WriteLine("9 - Avaliar proposições básicas");
-            Console.WriteLine("10 - Reconhecer Σ={a,b}: L_par_a e a b*");
+            Console.WriteLine("8 - Demonstrar reconhecedor que pode não terminar");
+            Console.WriteLine("9 - Utilizar detector ingênuo de loop + reflexão");
+            Console.WriteLine("10 - Simular AFD de casos fixos");
 
             Console.WriteLine("0 - Sair");
         }
@@ -57,6 +57,9 @@
                 case "5": Item5.Reconhecedor(); break;
                 case "6": Item6.ClassificadorPI(); break;
                 case "7": Item7.Decisor(); break;
+                case "8": Item8.ReconhecedorNaoTermina(); break;
+                case "9": Item9.DetectorLoopIngenuo(); break;
+                case "10": Item10.SimuladorAFD(); break;
                 default: Console.WriteLine("Opção inválida."); break;
             }
         }         
