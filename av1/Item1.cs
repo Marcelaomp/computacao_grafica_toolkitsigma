@@ -5,7 +5,7 @@ namespace ToolkitSigma
     {
         public static void Verificador()
         {
-            Console.WriteLine("1 - Verificar de alfabeto e cadeia (Σ = {a,b})");
+            Console.WriteLine("AV1: 1 - Verificar de alfabeto e cadeia (Σ = {a,b})");
             Console.Write("Digite um símbolo (caractere): ");
             string? simbolo = Console.ReadLine();
             bool simboloValido = !string.IsNullOrEmpty(simbolo) && simbolo.Length == 1 && (simbolo == "a" || simbolo == "b");

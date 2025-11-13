@@ -5,7 +5,7 @@ namespace ToolkitSigma
     {
         public static void Reconhecedor()
         {
-            Console.WriteLine("5 - Reconhecer Σ={a,b}: L_par_a e a b*");
+            Console.WriteLine("AV1: 5 - Reconhecer Σ={a,b}: L_par_a e a b*");
             Console.Write("Digite uma cadeia (apenas a/b): ");
             string? cadeia = Console.ReadLine() ?? "";
             foreach (char c in cadeia)

@@ -5,7 +5,7 @@ namespace ToolkitSigma
     {
         public static void TerminaComB()
         {
-            Console.WriteLine("3 - Verficar se termina com 'b'");
+            Console.WriteLine("AV1: 3 - Verficar se termina com 'b'");
             Console.Write("Digite uma cadeia (apenas a/b): ");
             string? cadeia = Console.ReadLine() ?? "";
             foreach (char c in cadeia)

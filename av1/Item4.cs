@@ -5,7 +5,7 @@ namespace ToolkitSigma
     {
         public static void AvaliadorProposicional()
         {
-            Console.WriteLine("4 - Avaliar proposições básicas");
+            Console.WriteLine("AV1: 4 - Avaliar proposições básicas");
             bool P = LerBooleano("Valor de P (true/false): ");
             bool Q = LerBooleano("Valor de Q (true/false): ");
             bool R = LerBooleano("Valor de R (true/false): ");

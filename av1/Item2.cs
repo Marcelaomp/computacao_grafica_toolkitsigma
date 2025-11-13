@@ -1,5 +1,4 @@
 using System.Text.Json;
-using System.Text.Json.Serialization;
 
 namespace ToolkitSigma
 {
@@ -8,24 +7,22 @@ namespace ToolkitSigma
     {
         public static void ClassificadorJson()
         {
-            Console.WriteLine("2 - Classificar T/I/N por JSON");
-            string path = Path.Combine(AppContext.BaseDirectory, "data", "classificacao.json");
-            if (!File.Exists(path))
+            Console.WriteLine("AV1: 2 - Classificar T/I/N por JSON");
+
+            List<JsonTemplate> items;
+            try
             {
-                Console.WriteLine("Arquivo de dados não encontrado: " + path);
-                return;
+                items = LeitorDeJson.ObterJsonEmbutido("classificacao_T_I_N.json");
             }
-            string json = File.ReadAllText(path);
-            List<Classificacao>? items = JsonSerializer.Deserialize<List<Classificacao>>(json);
-            if (items == null)
+            catch (Exception e)
             {
-                Console.WriteLine("Erro ao desserializar JSON.");
+                Console.WriteLine(e.Message);
                 return;
             }
 
             int total = 0;
             int acertos = 0;
-            foreach (Classificacao item in items)
+            foreach (JsonTemplate item in items)
             {
                 total++;
                 Console.WriteLine();
@@ -33,26 +30,20 @@ namespace ToolkitSigma
                 Console.Write("Classifique como (T)ratável / (I)ntratável / (N)ão computável: ");
                 string? resposta = (Console.ReadLine() ?? "").Trim().ToUpper();
                 char resp = resposta.Length > 0 ? resposta[0] : '?';
-                if (resp == item.Correcto)
+                if (resp == item.Correto)
                 {
                     acertos++;
                     Console.WriteLine("Correto.");
                 }
                 else
                 {
-                    Console.WriteLine($"Incorreto. Resposta esperada: {item.Correcto}");
+                    Console.WriteLine($"Incorreto. Resposta esperada: {item.Correto}");
                 }
             }
             Console.WriteLine();
             Console.WriteLine($"Resumo: {acertos} acertos de {total} itens.");
+            Console.WriteLine();
         }
     }
 }
 
-class Classificacao
-{
-    [JsonPropertyName("texto")]
-    public string Texto { get; set; } = string.Empty;
-    [JsonPropertyName("correcto")]
-    public char Correcto { get; set; } = '?';
-}
